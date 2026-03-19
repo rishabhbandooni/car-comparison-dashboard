@@ -22,7 +22,7 @@ export default function CarCard({ car, priority = false }) {
       <div className="p-4">
         <div className="flex items-start justify-between gap-2">
           <div>
-            <p className="text-xs text-gray-400 uppercase tracking-wider">{car.brand}</p>
+            <p className="text-xs text-gray-500 uppercase tracking-wider">{car.brand}</p>
             <h3 className="font-semibold text-gray-900 leading-tight">{car.model}</h3>
           </div>
           <span className="shrink-0 text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">

@@ -12,6 +12,7 @@ import xuv700Img from '../assets/cars/xuv700.webp'
 import kigerImg from '../assets/cars/kiger.webp'
 
 export const CAR_TYPES = ['All', 'Electric', 'SUV', 'Sedan', 'Hatchback']
+export const CAR_BRANDS = ['All', 'Honda', 'Hyundai', 'Kia', 'Mahindra', 'Maruti Suzuki', 'Renault', 'Tata']
 
 export const cars = [
   {
