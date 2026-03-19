@@ -2,6 +2,8 @@
 
 A minimal, responsive car comparison dashboard built with React and Tailwind CSS.
 
+**Live Demo:** [https://car-comparison-dashboard-kappa.vercel.app/](https://car-comparison-dashboard-kappa.vercel.app/)
+
 ## Tech Stack
 
 - React 19
