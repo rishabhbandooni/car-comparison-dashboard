@@ -1,6 +1,6 @@
 import { useCompare } from '../context/CompareContext'
 
-export default function CarCard({ car }) {
+export default function CarCard({ car, priority = false }) {
   const { selected, toggle } = useCompare()
   const isSelected = selected.some(c => c.id === car.id)
 
@@ -14,7 +14,10 @@ export default function CarCard({ car }) {
         src={car.image}
         alt={`${car.brand} ${car.model}`}
         className="w-full h-44 object-cover"
-        loading="lazy"
+        width={400}
+        height={176}
+        loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? 'high' : 'auto'}
       />
       <div className="p-4">
         <div className="flex items-start justify-between gap-2">

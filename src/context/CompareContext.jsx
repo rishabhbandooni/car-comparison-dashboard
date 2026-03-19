@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useMemo, useState } from 'react'
 
 const CompareContext = createContext(null)
 
@@ -25,8 +25,13 @@ export function CompareProvider({ children }) {
     setToast(null)
   }
 
+  const value = useMemo(
+    () => ({ selected, toggle, clear, toast, clearToast }),
+    [selected, toast]
+  )
+
   return (
-    <CompareContext.Provider value={{ selected, toggle, clear, toast, clearToast }}>
+    <CompareContext.Provider value={value}>
       {children}
     </CompareContext.Provider>
   )

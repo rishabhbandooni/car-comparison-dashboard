@@ -1,10 +1,11 @@
-import { useMemo, useState } from 'react'
+import { lazy, Suspense, useMemo, useState } from 'react'
 import { cars } from '../data/cars'
 import { useCompare } from '../context/CompareContext'
 import CarCard from './CarCard'
 import FilterBar from './FilterBar'
-import ComparisonTable from './ComparisonTable'
 import Toast from './Toast'
+
+const ComparisonTable = lazy(() => import('./ComparisonTable'))
 
 export default function Dashboard() {
   const [filter, setFilter] = useState('All')
@@ -44,13 +45,15 @@ export default function Dashboard() {
           <p className="text-gray-400 text-sm">No cars match the selected filter.</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {displayed.map(car => (
-              <CarCard key={car.id} car={car} />
+            {displayed.map((car, index) => (
+              <CarCard key={car.id} car={car} priority={index < 4} />
             ))}
           </div>
         )}
 
-        <ComparisonTable />
+        <Suspense fallback={null}>
+          <ComparisonTable />
+        </Suspense>
       </main>
 
       {toast && <Toast message={toast} onClose={clearToast} />}
