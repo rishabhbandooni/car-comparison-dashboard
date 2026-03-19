@@ -1,12 +1,15 @@
 import { useMemo, useState } from 'react'
 import { cars } from '../data/cars'
+import { useCompare } from '../context/CompareContext'
 import CarCard from './CarCard'
 import FilterBar from './FilterBar'
 import ComparisonTable from './ComparisonTable'
+import Toast from './Toast'
 
 export default function Dashboard() {
   const [filter, setFilter] = useState('All')
   const [sort, setSort] = useState('')
+  const { toast, clearToast } = useCompare()
 
   const displayed = useMemo(() => {
     let list = filter === 'All' ? cars : cars.filter(c => c.type === filter)
@@ -49,6 +52,8 @@ export default function Dashboard() {
 
         <ComparisonTable />
       </main>
+
+      {toast && <Toast message={toast} onClose={clearToast} />}
     </div>
   )
 }

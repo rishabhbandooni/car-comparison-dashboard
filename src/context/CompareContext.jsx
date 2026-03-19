@@ -4,23 +4,29 @@ const CompareContext = createContext(null)
 
 export function CompareProvider({ children }) {
   const [selected, setSelected] = useState([])
+  const [toast, setToast] = useState(null)
 
   function toggle(car) {
-    setSelected(prev =>
-      prev.find(c => c.id === car.id)
-        ? prev.filter(c => c.id !== car.id)
-        : prev.length < 4
-        ? [...prev, car]
-        : prev
-    )
+    setSelected(prev => {
+      if (prev.find(c => c.id === car.id)) return prev.filter(c => c.id !== car.id)
+      if (prev.length >= 4) {
+        setToast('You can compare up to 4 cars at a time.')
+        return prev
+      }
+      return [...prev, car]
+    })
   }
 
   function clear() {
     setSelected([])
   }
 
+  function clearToast() {
+    setToast(null)
+  }
+
   return (
-    <CompareContext.Provider value={{ selected, toggle, clear }}>
+    <CompareContext.Provider value={{ selected, toggle, clear, toast, clearToast }}>
       {children}
     </CompareContext.Provider>
   )

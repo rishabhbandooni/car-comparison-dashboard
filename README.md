@@ -1,16 +1,86 @@
-# React + Vite
+# Car Comparison Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal, responsive car comparison dashboard built with React and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19
+- Vite 8
+- Tailwind CSS v3
+- Context API (state management)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Browse a grid of car cards with brand, model, price, weight, and rating
+- Filter cars by type (SUV, Sedan, Electric, Hatchback)
+- Sort by price or rating
+- Select up to 4 cars and compare them side-by-side in a table
+- Fully responsive — mobile to desktop
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── App.jsx                  # Root component, wraps app in CompareProvider
+├── main.jsx                 # React entry point
+├── index.css                # Tailwind directives
+├── components/
+│   ├── Dashboard.jsx        # Main layout, filter/sort state
+│   ├── CarCard.jsx          # Individual car card with compare toggle
+│   ├── FilterBar.jsx        # Type filter and sort dropdowns
+│   └── ComparisonTable.jsx  # Side-by-side comparison table
+├── context/
+│   └── CompareContext.jsx   # Context for selected cars (toggle, clear)
+└── data/
+    └── cars.js              # Local car data and type constants
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Installation
+
+```bash
+git clone https://github.com/rishabhbandooni/Car-Comparison-Dashboard.git
+cd car-comparison-dashboard
+npm install
+```
+
+### Run Development Server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Running Tests
+
+Tests are written with Jest and React Testing Library.
+
+```bash
+npm test
+```
+
+The test file is located at `src/__tests__/App.test.jsx` and covers:
+
+- Dashboard title is rendered
+- Car cards with Compare buttons are rendered
+- Filter dropdown updates correctly when changed
+
