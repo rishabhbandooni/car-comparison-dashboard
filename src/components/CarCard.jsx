@@ -14,6 +14,7 @@ export default function CarCard({ car }) {
         src={car.image}
         alt={`${car.brand} ${car.model}`}
         className="w-full h-44 object-cover"
+        loading="lazy"
       />
       <div className="p-4">
         <div className="flex items-start justify-between gap-2">

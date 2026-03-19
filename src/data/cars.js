@@ -1,3 +1,16 @@
+import swiftImg from '../assets/cars/swift.webp'
+import cretaImg from '../assets/cars/creta.webp'
+import nexonEvImg from '../assets/cars/nexon-ev.webp'
+import tharImg from '../assets/cars/thar.webp'
+import hondaCityImg from '../assets/cars/city.webp'
+import balenoImg from '../assets/cars/baleno.webp'
+import harrierImg from '../assets/cars/harrier.webp'
+import seltosImg from '../assets/cars/seltos.webp'
+import tiagoEvImg from '../assets/cars/tiago-ev.webp'
+import vernaImg from '../assets/cars/verna.webp'
+import xuv700Img from '../assets/cars/xuv700.webp'
+import kigerImg from '../assets/cars/kiger.webp'
+
 export const CAR_TYPES = ['All', 'Electric', 'SUV', 'Sedan', 'Hatchback']
 
 export const cars = [
@@ -9,7 +22,7 @@ export const cars = [
     weight: 875,
     rating: 4.3,
     type: 'Hatchback',
-    image: 'https://placehold.co/400x220/1e293b/ffffff?text=Swift',
+    image: swiftImg,
   },
   {
     id: 2,
@@ -19,7 +32,7 @@ export const cars = [
     weight: 1350,
     rating: 4.5,
     type: 'SUV',
-    image: 'https://placehold.co/400x220/1e3a5f/ffffff?text=Creta',
+    image: cretaImg,
   },
   {
     id: 3,
@@ -29,7 +42,7 @@ export const cars = [
     weight: 1400,
     rating: 4.6,
     type: 'Electric',
-    image: 'https://placehold.co/400x220/1a3c1a/ffffff?text=Nexon+EV',
+    image: nexonEvImg,
   },
   {
     id: 4,
@@ -39,7 +52,7 @@ export const cars = [
     weight: 1750,
     rating: 4.4,
     type: 'SUV',
-    image: 'https://placehold.co/400x220/3b1f1f/ffffff?text=Thar',
+    image: tharImg,
   },
   {
     id: 5,
@@ -49,7 +62,7 @@ export const cars = [
     weight: 1100,
     rating: 4.5,
     type: 'Sedan',
-    image: 'https://placehold.co/400x220/0f2f2f/ffffff?text=Honda+City',
+    image: hondaCityImg,
   },
   {
     id: 6,
@@ -59,7 +72,7 @@ export const cars = [
     weight: 920,
     rating: 4.2,
     type: 'Hatchback',
-    image: 'https://placehold.co/400x220/1f1f3b/ffffff?text=Baleno',
+    image: balenoImg,
   },
   {
     id: 7,
@@ -69,7 +82,7 @@ export const cars = [
     weight: 1700,
     rating: 4.4,
     type: 'SUV',
-    image: 'https://placehold.co/400x220/2a2a2a/ffffff?text=Harrier',
+    image: harrierImg,
   },
   {
     id: 8,
@@ -79,7 +92,7 @@ export const cars = [
     weight: 1350,
     rating: 4.5,
     type: 'SUV',
-    image: 'https://placehold.co/400x220/1f3b3b/ffffff?text=Seltos',
+    image: seltosImg,
   },
   {
     id: 9,
@@ -89,7 +102,7 @@ export const cars = [
     weight: 1235,
     rating: 4.3,
     type: 'Electric',
-    image: 'https://placehold.co/400x220/2b1f3b/ffffff?text=Tiago+EV',
+    image: tiagoEvImg,
   },
   {
     id: 10,
@@ -99,7 +112,7 @@ export const cars = [
     weight: 1200,
     rating: 4.4,
     type: 'Sedan',
-    image: 'https://placehold.co/400x220/1a3c1a/ffffff?text=Verna',
+    image: vernaImg,
   },
   {
     id: 11,
@@ -109,7 +122,7 @@ export const cars = [
     weight: 1850,
     rating: 4.7,
     type: 'SUV',
-    image: 'https://placehold.co/400x220/3b2a1a/ffffff?text=XUV700',
+    image: xuv700Img,
   },
   {
     id: 12,
@@ -119,6 +132,6 @@ export const cars = [
     weight: 1012,
     rating: 4.1,
     type: 'SUV',
-    image: 'https://placehold.co/400x220/1c2b3b/ffffff?text=Kiger',
+    image: kigerImg,
   },
 ]
