@@ -55,11 +55,11 @@ export default function FilterBar({ filter, sort, brand, minPrice, maxPrice, onF
         <option value="rating_desc">Rating: High to Low</option>
         <option value="rating_asc">Rating: Low to High</option>
       </select>
-       <div className="border border-gray-200 rounded-lg px-3 py-2 bg-white flex items-center gap-3" >
-  <p className="text-xs text-gray-500 whitespace-nowrap">
-    Price: <span className="font-medium text-gray-700">{toL(minPrice)}</span> – <span className="font-medium text-gray-700">{toL(maxPrice)}</span>
-  </p>
-  <div className="relative h-4 w-40">
+      <div className="border border-gray-200 rounded-lg px-3 py-2 bg-white flex items-center gap-4">
+        <p className="w-28 shrink-0 text-xs text-gray-500 whitespace-nowrap tabular-nums">
+          Price: <span className="font-medium text-gray-700">{toL(minPrice)}</span> – <span className="font-medium text-gray-700">{toL(maxPrice)}</span>
+        </p>
+        <div className="relative h-4 w-40 shrink-0">
           <div
             className="absolute top-1/2 -translate-y-1/2 h-1 w-full rounded-full bg-gray-200"
           />
